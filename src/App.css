@@ -151,11 +151,18 @@ body {
   flex: 1;
 }
 
+.slot-logos {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
 .slot-logo-placeholder {
   width: 52px;
   height: 52px;
   border-radius: 50%;
   background: #3a3d45;
+  flex-shrink: 0;
 }
 
 .slot-info {

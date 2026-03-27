@@ -23,6 +23,30 @@ function getPitcherLastName(fullName: string): string {
   return parts[parts.length - 1];
 }
 
+function PitcherHeadshot({ pitcherId, size = 52 }: { pitcherId: number; size?: number }) {
+  const src = `https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${pitcherId}/headshot/67/current`;
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: '50%',
+        overflow: 'hidden',
+        flexShrink: 0,
+        background: '#1a1d22',
+      }}
+    >
+      <img
+        src={src}
+        alt="pitcher"
+        width={size}
+        height={size}
+        style={{ objectFit: 'cover', objectPosition: 'top center' }}
+      />
+    </div>
+  );
+}
+
 export function UpcomingGames({ slots }: Props) {
   return (
     <div className="card upcoming-card">
@@ -52,12 +76,35 @@ export function UpcomingGames({ slots }: Props) {
                   </>
                 ) : (
                   <>
-                    <TeamLogoCircle
-                      teamId={opponent!.team.id}
-                      size={52}
-                      alt={opponent!.team.name}
-                      grayscale={!metsIsHome}
-                    />
+                    <div className="slot-logos">
+                      {metsIsHome ? (
+                        <>
+                          <TeamLogoCircle
+                            teamId={opponent!.team.id}
+                            size={52}
+                            alt={opponent!.team.name}
+                          />
+                          {metsPitcher ? (
+                            <PitcherHeadshot pitcherId={metsPitcher.id} size={52} />
+                          ) : (
+                            <div className="slot-logo-placeholder" />
+                          )}
+                        </>
+                      ) : (
+                        <>
+                          {metsPitcher ? (
+                            <PitcherHeadshot pitcherId={metsPitcher.id} size={52} />
+                          ) : (
+                            <div className="slot-logo-placeholder" />
+                          )}
+                          <TeamLogoCircle
+                            teamId={opponent!.team.id}
+                            size={52}
+                            alt={opponent!.team.name}
+                          />
+                        </>
+                      )}
+                    </div>
                     <div className="slot-info">
                       <span className="slot-day">
                         {formatSlotDay(slot.date)} {formatSlotTime(game!.gameDate)}

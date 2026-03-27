@@ -77,20 +77,12 @@ export function useMLBData(): MLBData {
       );
       setLatestGame(liveToday ?? (finished.length > 0 ? finished[finished.length - 1] : null));
 
-      // Build 3 upcoming day slots: find first upcoming game date, show that + 2 more days
-      const preview = allGames.filter(
-        (g) => g.status.abstractGameState === 'Preview' && g.officialDate >= todayStr
-      );
+      // Build 3 day slots starting from today
       const slots: UpcomingSlot[] = [];
-      if (preview.length > 0) {
-        const firstDate = preview[0].officialDate;
-        const [y, m, d] = firstDate.split('-').map(Number);
-        for (let i = 0; i < 3; i++) {
-          const slot = new Date(y, m - 1, d + i);
-          const dateStr = slot.toISOString().split('T')[0];
-          const game = preview.find((g) => g.officialDate === dateStr) ?? null;
-          slots.push({ date: dateStr, game });
-        }
+      for (let i = 0; i < 3; i++) {
+        const dateStr = daysAhead(i);
+        const game = allGames.find((g) => g.officialDate === dateStr) ?? null;
+        slots.push({ date: dateStr, game });
       }
       setUpcomingSlots(slots);
 

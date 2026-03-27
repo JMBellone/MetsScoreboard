@@ -6,6 +6,7 @@ export interface Team {
 }
 
 export interface ProbablePitcher {
+  id: number;
   fullName: string;
   lastName?: string;
 }
