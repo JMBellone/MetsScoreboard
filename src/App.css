@@ -173,7 +173,7 @@ body {
 }
 
 .slot-day {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -182,7 +182,7 @@ body {
 }
 
 .slot-pitcher {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--text-primary);
   text-align: center;
@@ -191,7 +191,7 @@ body {
 
 .slot-pitcher.off-day {
   font-style: normal;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
