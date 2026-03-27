@@ -259,7 +259,7 @@ body {
 /* Mets row highlight */
 .mets-row td {
   color: var(--white) !important;
-  background: rgba(255, 89, 16, 0.20);
+  background: rgba(255, 255, 255, 0.10);
 }
 
 
