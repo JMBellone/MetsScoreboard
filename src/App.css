@@ -129,7 +129,7 @@ body {
 }
 
 .upcoming-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -143,8 +143,8 @@ body {
   justify-content: space-around;
   gap: 4px;
   flex: 1;
-  align-items: center;
-  padding-bottom: 0;
+  align-items: flex-end;
+  padding-bottom: 10px;
 }
 
 .upcoming-slot {
@@ -206,7 +206,7 @@ body {
 }
 
 .standings-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -237,7 +237,7 @@ body {
 }
 
 .standings-table tbody td {
-  padding: 10px 4px;
+  padding: 14px 4px;
   text-align: center;
   color: var(--text-secondary);
   font-size: 0.8rem;
