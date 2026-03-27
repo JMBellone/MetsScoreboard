@@ -64,7 +64,7 @@ body {
 /* ── Score Card ── */
 .score-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 6px;
   padding: 10px 14px;
@@ -75,6 +75,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  padding-top: 10px;
 }
 
 .sc-record {
@@ -83,12 +84,14 @@ body {
   font-weight: 600;
 }
 
+/* score digit top-aligned so its center (half of line-height) lines up with logo center (padding-top + 26px) */
 .sc-score {
   font-size: 2.6rem;
   font-weight: 900;
   line-height: 1;
   min-width: 28px;
   text-align: center;
+  padding-top: 16px; /* 10px team padding + 26px logo center - ~20px half-score-height */
 }
 
 .sc-score.mets-score { color: var(--mets-orange); }
@@ -100,17 +103,18 @@ body {
   align-items: center;
   gap: 3px;
   flex: 1;
+  padding-top: 10px;
 }
 
 .sc-date {
-  font-size: 0.6rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   font-weight: 600;
   letter-spacing: 0.04em;
 }
 
 .sc-label {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: 0.04em;
