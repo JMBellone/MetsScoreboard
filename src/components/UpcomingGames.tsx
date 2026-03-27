@@ -26,24 +26,13 @@ function getPitcherLastName(fullName: string): string {
 function PitcherHeadshot({ pitcherId, size = 52 }: { pitcherId: number; size?: number }) {
   const src = `https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${pitcherId}/headshot/67/current`;
   return (
-    <div
-      style={{
-        width: size,
-        height: size,
-        borderRadius: '50%',
-        overflow: 'hidden',
-        flexShrink: 0,
-        background: '#1a1d22',
-      }}
-    >
-      <img
-        src={src}
-        alt="pitcher"
-        width={size}
-        height={size}
-        style={{ objectFit: 'cover', objectPosition: 'top center' }}
-      />
-    </div>
+    <img
+      src={src}
+      alt="pitcher"
+      width={size}
+      height={size}
+      style={{ objectFit: 'cover', objectPosition: 'top center', flexShrink: 0 }}
+    />
   );
 }
 
@@ -67,13 +56,10 @@ export function UpcomingGames({ slots }: Props) {
             return (
               <div key={slot.date} className="upcoming-slot">
                 {isOffDay ? (
-                  <>
-                    <div className="slot-logo-placeholder" />
-                    <div className="slot-info">
-                      <span className="slot-day">{formatSlotDay(slot.date)}</span>
-                      <span className="slot-pitcher off-day">OFF DAY</span>
-                    </div>
-                  </>
+                  <div className="slot-info">
+                    <span className="slot-day">{formatSlotDay(slot.date)}</span>
+                    <span className="slot-pitcher off-day">OFF DAY</span>
+                  </div>
                 ) : (
                   <>
                     <div className="slot-logos">
