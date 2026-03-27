@@ -10,7 +10,7 @@ interface Props {
 function formatDate(officialDate: string): string {
   const [year, month, day] = officialDate.split('-').map(Number);
   const d = new Date(year, month - 1, day);
-  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase();
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }).toUpperCase();
 }
 
 function formatGameTime(gameDate: string): string {
