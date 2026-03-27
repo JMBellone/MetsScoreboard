@@ -24,14 +24,13 @@ function getPitcherLastName(fullName: string): string {
 }
 
 function PitcherHeadshot({ pitcherId, size = 52 }: { pitcherId: number; size?: number }) {
-  const src = `https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${pitcherId}/headshot/67/current`;
+  const src = `https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:silo:current.png/w_213,q_auto:best/v1/people/${pitcherId}/headshot/silo/current`;
   return (
     <img
       src={src}
       alt="pitcher"
       width={size}
-      height={size}
-      style={{ objectFit: 'cover', objectPosition: 'top center', flexShrink: 0 }}
+      style={{ display: 'block', flexShrink: 0 }}
     />
   );
 }
