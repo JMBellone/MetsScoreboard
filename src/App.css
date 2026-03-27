@@ -143,8 +143,8 @@ body {
   justify-content: space-around;
   gap: 4px;
   flex: 1;
-  align-items: flex-end;
-  padding-bottom: 6px;
+  align-items: center;
+  padding-bottom: 0;
 }
 
 .upcoming-slot {
@@ -237,7 +237,7 @@ body {
 }
 
 .standings-table tbody td {
-  padding: 5px 4px;
+  padding: 10px 4px;
   text-align: center;
   color: var(--text-secondary);
   font-size: 0.8rem;
