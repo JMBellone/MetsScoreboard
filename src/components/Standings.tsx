@@ -12,6 +12,11 @@ function formatGB(val: string): string {
   return val === '-' || val === '0.0' ? '—' : val;
 }
 
+function getLastTen(record: TeamRecord): string {
+  const split = record.records?.splitRecords?.find((r) => r.type === 'lastTen');
+  return split ? `${split.wins}-${split.losses}` : '—';
+}
+
 export function Standings({ standings }: Props) {
   const nlEast = standings
     .filter((r) => NL_EAST_IDS.includes(r.team.id))
@@ -32,6 +37,8 @@ export function Standings({ standings }: Props) {
               <th>L</th>
               <th>DIV</th>
               <th>WC</th>
+              <th>STRK</th>
+              <th>L10</th>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +52,8 @@ export function Standings({ standings }: Props) {
                 <td>{record.leagueRecord.losses}</td>
                 <td>{formatGB(record.gamesBack)}</td>
                 <td>{formatGB(record.wildCardGamesBack ?? '-')}</td>
+                <td>{record.streak?.streakCode ?? '—'}</td>
+                <td>{getLastTen(record)}</td>
               </tr>
             ))}
           </tbody>

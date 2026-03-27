@@ -54,4 +54,7 @@ export interface TeamRecord {
   gamesBack: string;
   wildCardGamesBack: string;
   streak?: { streakCode: string };
+  records?: {
+    splitRecords: Array<{ type: string; wins: number; losses: number }>;
+  };
 }

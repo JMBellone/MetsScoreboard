@@ -51,7 +51,7 @@ export function useMLBData(): MLBData {
         ),
         fetch(
           `${BASE_URL}/standings?leagueId=104&season=${new Date().getFullYear()}` +
-          `&standingsTypes=regularSeason&hydrate=team`
+          `&standingsTypes=regularSeason&hydrate=team,record`
         ),
       ]);
 
