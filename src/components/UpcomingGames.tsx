@@ -66,11 +66,11 @@ export function UpcomingGames({ slots }: Props) {
                         <>
                           <TeamLogoCircle
                             teamId={opponent!.team.id}
-                            size={44}
+                            size={52}
                             alt={opponent!.team.name}
                           />
                           {metsPitcher ? (
-                            <PitcherHeadshot pitcherId={metsPitcher.id} size={44} />
+                            <PitcherHeadshot pitcherId={metsPitcher.id} size={52} />
                           ) : (
                             <div className="slot-logo-placeholder" />
                           )}
@@ -78,13 +78,13 @@ export function UpcomingGames({ slots }: Props) {
                       ) : (
                         <>
                           {metsPitcher ? (
-                            <PitcherHeadshot pitcherId={metsPitcher.id} size={44} />
+                            <PitcherHeadshot pitcherId={metsPitcher.id} size={52} />
                           ) : (
                             <div className="slot-logo-placeholder" />
                           )}
                           <TeamLogoCircle
                             teamId={opponent!.team.id}
-                            size={44}
+                            size={52}
                             alt={opponent!.team.name}
                           />
                         </>
