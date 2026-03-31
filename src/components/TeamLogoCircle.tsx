@@ -18,7 +18,7 @@ const TEAM_COLORS: Record<number, string> = {
   134: '#27251F', // PIT
   135: '#2F241D', // SD
   136: '#0C2C56', // SEA
-  137: '#FD5A1E', // SF
+  137: '#27251F', // SF
   138: '#BA0C2F', // STL
   139: '#092C5C', // TB
   140: '#003278', // TEX
