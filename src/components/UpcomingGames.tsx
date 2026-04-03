@@ -1,5 +1,6 @@
 import type { UpcomingSlot, Broadcast } from '../types';
 import { TeamLogoCircle } from './TeamLogoCircle';
+import { BroadcastBadge } from './BroadcastBadge';
 
 const METS_ID = 121;
 
@@ -109,7 +110,7 @@ export function UpcomingGames({ slots }: Props) {
                         {metsPitcher ? getPitcherLastName(metsPitcher.fullName) : 'TBD'}
                       </span>
                       {metsBroadcast && (
-                        <span className="slot-broadcast">{metsBroadcast}</span>
+                        <BroadcastBadge channel={metsBroadcast} />
                       )}
                     </div>
                   </>
