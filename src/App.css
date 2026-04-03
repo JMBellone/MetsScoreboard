@@ -253,7 +253,6 @@ body {
 
 .standings-table tbody tr:last-child td {
   padding-bottom: 6px;
-  border-bottom: none;
 }
 
 .standings-table tbody td.col-rank {
