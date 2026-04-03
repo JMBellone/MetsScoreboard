@@ -18,8 +18,13 @@ export default function App() {
       )}
 
       <div className={`dashboard-grid ${loading ? 'loading' : ''}`}>
-        <ScoreCard game={latestGame} />
-        <UpcomingGames slots={upcomingSlots} />
+        {/* Left column: score on top, upcoming below */}
+        <div className="left-col">
+          <ScoreCard game={latestGame} />
+          <UpcomingGames slots={upcomingSlots} />
+        </div>
+
+        {/* Right column: standings full height */}
         <Standings standings={standings} />
       </div>
 
