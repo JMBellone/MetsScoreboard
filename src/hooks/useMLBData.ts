@@ -47,7 +47,7 @@ export function useMLBData(): MLBData {
         fetch(
           `${BASE_URL}/schedule?teamId=${METS_ID}&sportId=1` +
           `&startDate=${daysAgo(7)}&endDate=${daysAhead(14)}` +
-          `&hydrate=team,linescore,venue,probablePitcher&gameTypes=R,S`
+          `&hydrate=team,linescore,venue,probablePitcher,broadcasts&gameTypes=R,S`
         ),
         fetch(
           `${BASE_URL}/standings?leagueId=104&season=${new Date().getFullYear()}` +

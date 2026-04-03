@@ -199,6 +199,15 @@ body {
   color: var(--text-secondary);
 }
 
+.slot-broadcast {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
 /* ── Standings Card ── */
 .standings-card {
   display: flex;

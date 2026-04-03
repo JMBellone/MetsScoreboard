@@ -1,4 +1,4 @@
-import type { UpcomingSlot } from '../types';
+import type { UpcomingSlot, Broadcast } from '../types';
 import { TeamLogoCircle } from './TeamLogoCircle';
 
 const METS_ID = 121;
@@ -21,6 +21,16 @@ function formatSlotTime(gameDate: string): string {
 function getPitcherLastName(fullName: string): string {
   const parts = fullName.trim().split(' ');
   return parts[parts.length - 1];
+}
+
+function getMetsBroadcast(broadcasts: Broadcast[] | undefined, metsIsHome: boolean): string | null {
+  if (!broadcasts) return null;
+  const tvBroadcasts = broadcasts.filter((b) => b.type === 'TV');
+  const metsSide = metsIsHome ? 'home' : 'away';
+  const local = tvBroadcasts.find((b) => b.homeAway === metsSide);
+  if (local) return local.name;
+  const national = tvBroadcasts.find((b) => b.isNational);
+  return national?.name ?? null;
 }
 
 function PitcherHeadshot({ pitcherId, size = 52 }: { pitcherId: number; size?: number }) {
@@ -51,6 +61,7 @@ export function UpcomingGames({ slots }: Props) {
             const metsPitcher = game
               ? (metsIsHome ? game.teams.home.probablePitcher : game.teams.away.probablePitcher)
               : null;
+            const metsBroadcast = game ? getMetsBroadcast(game.broadcasts, metsIsHome) : null;
 
             return (
               <div key={slot.date} className="upcoming-slot">
@@ -97,6 +108,9 @@ export function UpcomingGames({ slots }: Props) {
                       <span className="slot-pitcher">
                         {metsPitcher ? getPitcherLastName(metsPitcher.fullName) : 'TBD'}
                       </span>
+                      {metsBroadcast && (
+                        <span className="slot-broadcast">{metsBroadcast}</span>
+                      )}
                     </div>
                   </>
                 )}

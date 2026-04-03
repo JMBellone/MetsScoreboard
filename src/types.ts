@@ -25,6 +25,14 @@ export interface GameStatus {
   statusCode: string;
 }
 
+export interface Broadcast {
+  id: number;
+  name: string;
+  type: string;
+  homeAway?: string;
+  isNational?: boolean;
+}
+
 export interface Game {
   gamePk: number;
   gameDate: string;
@@ -40,6 +48,7 @@ export interface Game {
     currentInningOrdinal?: string;
     inningHalf?: string;
   };
+  broadcasts?: Broadcast[];
 }
 
 export interface UpcomingSlot {
