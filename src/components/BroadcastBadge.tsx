@@ -6,8 +6,8 @@ function SnyIcon() {
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/1/1c/SNY_logo.svg"
       alt="SNY"
-      width="30"
-      height="30"
+      width="40"
+      height="40"
       style={{ display: 'block', flexShrink: 0, objectFit: 'contain' }}
     />
   );
@@ -18,8 +18,8 @@ function WpixIcon() {
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/7/7d/WPIXTV.png"
       alt="PIX11"
-      width="30"
-      height="30"
+      width="40"
+      height="40"
       style={{ display: 'block', flexShrink: 0, objectFit: 'contain' }}
     />
   );
@@ -27,7 +27,7 @@ function WpixIcon() {
 
 function EspnIcon() {
   return (
-    <svg viewBox="0 0 36 36" width="30" height="30" style={{ display: 'block', flexShrink: 0 }}>
+    <svg viewBox="0 0 36 36" width="40" height="40" style={{ display: 'block', flexShrink: 0 }}>
       <rect width="36" height="36" rx="6" fill="#cc0000" />
       <text x="18" y="23" textAnchor="middle" fill="white" fontSize="11" fontWeight="900" fontFamily="Arial, sans-serif" letterSpacing="-0.5">ESPN</text>
     </svg>
@@ -36,7 +36,7 @@ function EspnIcon() {
 
 function FoxIcon() {
   return (
-    <svg viewBox="0 0 36 36" width="30" height="30" style={{ display: 'block', flexShrink: 0 }}>
+    <svg viewBox="0 0 36 36" width="40" height="40" style={{ display: 'block', flexShrink: 0 }}>
       <rect width="36" height="36" rx="6" fill="#002244" />
       <text x="18" y="23" textAnchor="middle" fill="#ffd700" fontSize="14" fontWeight="900" fontFamily="Arial, sans-serif">FOX</text>
     </svg>
@@ -45,7 +45,7 @@ function FoxIcon() {
 
 function MlbNetworkIcon() {
   return (
-    <svg viewBox="0 0 36 36" width="30" height="30" style={{ display: 'block', flexShrink: 0 }}>
+    <svg viewBox="0 0 36 36" width="40" height="40" style={{ display: 'block', flexShrink: 0 }}>
       <rect width="36" height="36" rx="6" fill="#002244" />
       <text x="18" y="15" textAnchor="middle" fill="#c8102e" fontSize="11" fontWeight="900" fontFamily="Arial, sans-serif">MLB</text>
       <text x="18" y="28" textAnchor="middle" fill="white" fontSize="7.5" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="0.5">NETWORK</text>
@@ -55,7 +55,7 @@ function MlbNetworkIcon() {
 
 function AppleTvIcon() {
   return (
-    <svg viewBox="0 0 36 36" width="30" height="30" style={{ display: 'block', flexShrink: 0 }}>
+    <svg viewBox="0 0 36 36" width="40" height="40" style={{ display: 'block', flexShrink: 0 }}>
       <rect width="36" height="36" rx="6" fill="#1c1c1e" />
       {/* Apple logo path */}
       <path d="M21.5 10.5c.9-1.1.8-2.3.8-2.3s-1.1.1-2.1.8c-.9.6-1.4 1.6-1.3 2.4 1.1.1 1.8-.4 2.6-.9z" fill="white" />
@@ -66,7 +66,7 @@ function AppleTvIcon() {
 
 function PeacockIcon() {
   return (
-    <svg viewBox="0 0 36 36" width="30" height="30" style={{ display: 'block', flexShrink: 0 }}>
+    <svg viewBox="0 0 36 36" width="40" height="40" style={{ display: 'block', flexShrink: 0 }}>
       <rect width="36" height="36" rx="6" fill="#000000" />
       <text x="18" y="15" textAnchor="middle" fill="white" fontSize="7" fontWeight="700" fontFamily="Arial, sans-serif">NBC</text>
       <text x="18" y="28" textAnchor="middle" fill="#00a650" fontSize="7" fontWeight="700" fontFamily="Arial, sans-serif">PEACOCK</text>
@@ -77,7 +77,7 @@ function PeacockIcon() {
 function GenericTvIcon({ name }: { name: string }) {
   const abbr = name.replace(/\s+/g, '').slice(0, 3).toUpperCase();
   return (
-    <svg viewBox="0 0 36 36" width="30" height="30" style={{ display: 'block', flexShrink: 0 }}>
+    <svg viewBox="0 0 36 36" width="40" height="40" style={{ display: 'block', flexShrink: 0 }}>
       <rect width="36" height="36" rx="6" fill="#2a3a5a" />
       <text x="18" y="23" textAnchor="middle" fill="white" fontSize="10" fontWeight="800" fontFamily="Arial, sans-serif">{abbr}</text>
     </svg>
