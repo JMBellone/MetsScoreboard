@@ -106,7 +106,6 @@ export function BroadcastBadge({ channel }: Props) {
   return (
     <div className="broadcast-badge">
       {IconComponent ? <IconComponent /> : <GenericTvIcon name={channel} />}
-      <span className="broadcast-badge-name">{channel}</span>
     </div>
   );
 }

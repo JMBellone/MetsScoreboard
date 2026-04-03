@@ -209,14 +209,6 @@ body {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.broadcast-badge-name {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
 
 /* ── Standings Card ── */
 .standings-card {
