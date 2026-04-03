@@ -3,23 +3,25 @@ import React from 'react';
 // Inline SVG icons for known broadcast channels
 function SnyIcon() {
   return (
-    <svg viewBox="0 0 36 36" width="20" height="20" style={{ display: 'block', flexShrink: 0 }}>
-      <rect width="36" height="36" rx="6" fill="#1255a4" />
-      <text x="18" y="15" textAnchor="middle" fill="white" fontSize="10" fontWeight="900" fontFamily="Arial, sans-serif" letterSpacing="-0.5">SNY</text>
-      <rect x="6" y="19" width="24" height="2" rx="1" fill="#e8c840" />
-      <text x="18" y="30" textAnchor="middle" fill="white" fontSize="7" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="1">SPORTS</text>
-    </svg>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/1/1c/SNY_logo.svg"
+      alt="SNY"
+      width="20"
+      height="20"
+      style={{ display: 'block', flexShrink: 0, objectFit: 'contain' }}
+    />
   );
 }
 
 function WpixIcon() {
   return (
-    <svg viewBox="0 0 36 36" width="20" height="20" style={{ display: 'block', flexShrink: 0 }}>
-      <rect width="36" height="36" rx="6" fill="#112266" />
-      <circle cx="18" cy="18" r="13" stroke="#c8a800" strokeWidth="2.5" fill="none" />
-      <text x="18" y="16" textAnchor="middle" fill="white" fontSize="8" fontWeight="900" fontFamily="Arial, sans-serif">PIX</text>
-      <text x="18" y="26" textAnchor="middle" fill="#c8a800" fontSize="9" fontWeight="900" fontFamily="Arial, sans-serif">11</text>
-    </svg>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/7/7d/WPIXTV.png"
+      alt="PIX11"
+      width="20"
+      height="20"
+      style={{ display: 'block', flexShrink: 0, objectFit: 'contain' }}
+    />
   );
 }
 
