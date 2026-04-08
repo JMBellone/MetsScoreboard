@@ -3,9 +3,9 @@
    ============================================================ */
 
 :root {
-  --bg: #2a2d33;
-  --card-bg: #2d2f35;
-  --card-border: #3d3f47;
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --card-border: #2d2d2d;
   --mets-orange: #FF5910;
   --white: #ffffff;
   --text-primary: #ffffff;
@@ -165,7 +165,7 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #3a3d45;
+  background: #2a2a2a;
   flex-shrink: 0;
 }
 
