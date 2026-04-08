@@ -62,7 +62,12 @@ export function UpcomingGames({ slots }: Props) {
             const metsPitcher = game
               ? (metsIsHome ? game.teams.home.probablePitcher : game.teams.away.probablePitcher)
               : null;
-            const metsBroadcast = game ? getMetsBroadcast(game.broadcasts, metsIsHome) : null;
+            const broadcastOverrides: Record<string, string> = {
+              '2026-04-09': 'SNY',
+            };
+            const metsBroadcast = game
+              ? (broadcastOverrides[slot.date] ?? getMetsBroadcast(game.broadcasts, metsIsHome))
+              : null;
 
             return (
               <div key={slot.date} className="upcoming-slot">

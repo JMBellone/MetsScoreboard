@@ -37,9 +37,13 @@ export function ScoreCard({ game }: Props) {
   const metsIsHome = home.team.id === METS_ID;
   void metsIsHome;
 
+  const finalInnings = isFinal && linescore?.currentInning && linescore.currentInning > 9
+    ? linescore.currentInning
+    : null;
+
   const statusLabel = isLive && linescore
     ? `${linescore.inningHalf === 'Top' ? '▲' : '▼'} ${linescore.currentInningOrdinal}`
-    : isFinal ? 'FINAL'
+    : isFinal ? (finalInnings ? `FINAL/${finalInnings}` : 'FINAL')
     : isPreview ? formatGameTime(gameDate)
     : status.detailedState.toUpperCase();
 
