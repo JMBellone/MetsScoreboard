@@ -64,6 +64,7 @@ export function UpcomingGames({ slots }: Props) {
               : null;
             const broadcastOverrides: Record<string, string> = {
               '2026-04-09': 'SNY',
+              '2026-04-15': 'ESPN',
             };
             const metsBroadcast = game
               ? (broadcastOverrides[slot.date] ?? getMetsBroadcast(game.broadcasts, metsIsHome))

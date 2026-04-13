@@ -5,6 +5,11 @@ const METS_ID = 121;
 const NL_EAST_DIVISION_ID = 204;
 const BASE_URL = 'https://statsapi.mlb.com/api/v1';
 
+// Hardcoded pitcher overrides keyed by date (YYYY-MM-DD)
+const PITCHER_OVERRIDES: Record<string, { id: number; fullName: string }> = {
+  '2026-04-15': { id: 656887, fullName: 'Clay Holmes' },
+};
+
 function today(): string {
   return new Date().toISOString().split('T')[0];
 }
@@ -81,7 +86,18 @@ export function useMLBData(): MLBData {
       const slots: UpcomingSlot[] = [];
       for (let i = 0; i < 3; i++) {
         const dateStr = daysAhead(i);
-        const game = allGames.find((g) => g.officialDate === dateStr) ?? null;
+        let game = allGames.find((g) => g.officialDate === dateStr) ?? null;
+        if (game && PITCHER_OVERRIDES[dateStr]) {
+          const override = PITCHER_OVERRIDES[dateStr];
+          const side = game.teams.home.team.id === METS_ID ? 'home' : 'away';
+          game = {
+            ...game,
+            teams: {
+              ...game.teams,
+              [side]: { ...game.teams[side], probablePitcher: override },
+            },
+          };
+        }
         slots.push({ date: dateStr, game });
       }
       setUpcomingSlots(slots);
