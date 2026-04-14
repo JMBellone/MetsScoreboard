@@ -7,7 +7,7 @@ const BASE_URL = 'https://statsapi.mlb.com/api/v1';
 
 // Hardcoded pitcher overrides keyed by date (YYYY-MM-DD)
 const PITCHER_OVERRIDES: Record<string, { id: number; fullName: string }> = {
-  '2026-04-15': { id: 656887, fullName: 'Clay Holmes' },
+  '2026-04-15': { id: 605280, fullName: 'Clay Holmes' },
 };
 
 function today(): string {
