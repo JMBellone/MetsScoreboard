@@ -16,7 +16,7 @@ function formatSlotDay(dateStr: string): string {
 
 function formatSlotTime(gameDate: string): string {
   const d = new Date(gameDate);
-  return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
 }
 
 function getPitcherLastName(fullName: string): string {
